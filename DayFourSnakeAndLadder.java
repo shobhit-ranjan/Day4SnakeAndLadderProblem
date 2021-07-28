@@ -5,9 +5,16 @@ public class DayFourSnakeAndLadder {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		int Dice = 0;
+		//int Dice = 0;
 		RollADice();
 		playOrNoPlay();
+		int position=snakeLadderGame.gameToBeStarted();
+		while(position<=100)
+		{
+			int DiceOne=RollADice();
+			int Play=playOrNoPlay();
+			position=position+DiceOne*Play;
+		}
 
 	}
 
@@ -41,7 +48,8 @@ public class DayFourSnakeAndLadder {
 }
 
 class snakeLadderGame {
-	void gameToBeStarted() {
+	public static int gameToBeStarted() {
 		int Pos = 0;
+		return Pos;
 	}
 }
