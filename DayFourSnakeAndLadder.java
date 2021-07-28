@@ -5,7 +5,7 @@ public class DayFourSnakeAndLadder {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		// int Dice = 0;
+		int timesYouPlayed = 0;
 		RollADice();
 		playOrNoPlay();
 		int position = snakeLadderGame.gameToBeStarted();
@@ -20,7 +20,10 @@ public class DayFourSnakeAndLadder {
 			if (position < 0) {
 				position = 0;
 			}
+			System.out.println("Position is " + position);
 		}
+
+		System.out.println("Till Now You Have Played " + timesYouPlayed);
 
 	}
 
