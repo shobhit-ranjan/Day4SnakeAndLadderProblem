@@ -5,34 +5,36 @@ public class DayFourSnakeAndLadder {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		//int Dice = 0;
+		// int Dice = 0;
 		RollADice();
 		playOrNoPlay();
-		int position=snakeLadderGame.gameToBeStarted();
-		while(position<=100)
-		{
-			int DiceOne=RollADice();
-			int Play=playOrNoPlay();
-			position=position+DiceOne*Play;
+		int position = snakeLadderGame.gameToBeStarted();
+		while (position <= 100) {
+			int DiceOne = RollADice();
+			int Play = playOrNoPlay();
+			int movement = DiceOne * Play;
+			if (position > 100) {
+				continue;
+			}
+			position = position + movement;
+			if (position < 0) {
+				position = 0;
+			}
 		}
 
 	}
 
-	public static int playOrNoPlay()
-	{
+	public static int playOrNoPlay() {
 		int chance = 0;
 		Random player = new Random();
 		int temp = player.nextInt(3);
-		if(temp==0)
-		{
-			chance=0;
-		}
-		else if (temp==1) {
-			chance=1;
-			
-		}
-		else {
-			chance=-1;
+		if (temp == 0) {
+			chance = 0;
+		} else if (temp == 1) {
+			chance = 1;
+
+		} else {
+			chance = -1;
 		}
 		System.out.println(chance);
 		return chance;
